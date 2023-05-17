@@ -1,6 +1,7 @@
 version: "3"
 services:
-  web:
+  django_app:
     build: .
+    image: django/test_app
     ports:
     - '8000:8000'
