@@ -1,15 +1,39 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: django_test
+  name: django-test-deployment
 spec:
-  containers:
-    - name: django_test
-      image: manjeetyadav19/django
-      imagePullPolicy: Always
-      ports:
-      - name: django_test
-        containerPort: 8000
-        protocol: TCP
-  imagePullSecrets:
-    - name: regcred
+  replicas: 2
+  selector:
+    matchLabels:
+      app: django-test
+  template:
+    metadata:
+      labels:
+        app: django-test
+    spec:
+      containers:
+        - name: django-test
+          image: manjeetyadav19/django
+          imagePullPolicy: Always
+          ports:
+          - name: django_test
+            containerPort: 8000
+            protocol: TCP
+      imagePullSecrets:
+        - name: regcred
+...
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: django-test-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: django-test
+  ports:
+  - port: 8000
+    targetPort: 8000
+    protocol: TCP
+...
