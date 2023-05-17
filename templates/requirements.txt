@@ -16,7 +16,7 @@ pycodestyle==2.7.0
 pylint==2.5.2
 pytz==2020.4
 reportlab==3.6.1
-six==1.11.0
+six==1.11.12
 sqlparse==0.4.1
 toml==0.10.1
 virtualenv==20.4.7
