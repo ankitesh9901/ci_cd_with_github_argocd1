@@ -17,7 +17,7 @@ spec:
           image: manjeetyadav19/django
           imagePullPolicy: Always
           ports:
-          - name: django_test
+          - name: django-test
             containerPort: 8000
             protocol: TCP
       imagePullSecrets:
