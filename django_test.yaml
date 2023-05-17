@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: django_test
+spec:
+  containers:
+    - name: django_test
+      image: manjeetyadav19/django
+      imagePullPolicy: Always
+      ports:
+      - name: django_test
+        containerPort: 8000
+        protocol: TCP
+  imagePullSecrets:
+    - name: regcred
