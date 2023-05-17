@@ -29,7 +29,7 @@ kind: Service
 metadata:
   name: django-test-service
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: django-test
   ports:
