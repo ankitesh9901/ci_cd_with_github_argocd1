@@ -26,5 +26,5 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: manjeetyadav19/django:latest
+          tags: ankitesh/django:latest
 #Test
